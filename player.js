@@ -4,7 +4,7 @@ class Player {
         this.x = x
         this.y = y
         this.size = size
-        this.step = 1
+        this.step = 5
         this.keyboardMove = { left: false, right: false, up: false, down: false }
         this.element = this.createElement();
         this.initEvents()
