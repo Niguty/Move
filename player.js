@@ -21,19 +21,26 @@ class Player {
         this.draw()
     }
 
-    move(){}
+    move(){
+        
+    }
 
     colisionWall(){}
 
     draw(){
-        this.element.style.left = `${this.horizontal}px`
-        this.element.style.top = `${this.vertical}px`
+        this.element.style.left = `${this.horizontal}px`;
+        this.element.style.top = `${this.vertical}px`;
     }
 
     initEvents(){
         document.body.addEventListener('keydown', (event) => {
             
-            console.log(event.key)
+            const key = event.key.toLowerCase()
+
+            if(key == 'a') {}
+            if(key == 'd') {}
+            if(key == 'w') {}
+            if(key == 's') {}
 
         })
     }
