@@ -4,6 +4,7 @@ class Player {
         this.x = x
         this.y = y
         this.size = 50
+        this.step = 1
         this.keyboardMove - { left: false, right: false, up: false, down: false }
         this.element = this.createElement();
         this.initEvents()
@@ -22,7 +23,10 @@ class Player {
     }
 
     move(){
-
+        if(this.keyboardMove.left) this.x -= this.step
+        if(this.keyboardMove.right) this.x += this.step
+        if(this.keyboardMove.up) this.y -= this.step
+        if(this.keyboardMove.down) this.y += this.step
     }
 
     colisionWall(){}
