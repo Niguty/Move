@@ -17,6 +17,7 @@ class Player {
 
     update(){
         this.move()
+        this.colisionWall()
         this.draw()
     }
 
