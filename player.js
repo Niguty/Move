@@ -4,7 +4,9 @@ class Player {
         this.horizontal = horizontal
         this.vertical = vertical
         this.size = 50
+        this.keyboardMove - { left: false, right: false, up: false, down: false }
         this.element = this.createElement
+        this.initEvents()
     }
 
     createElement(){
@@ -22,5 +24,16 @@ class Player {
 
     colisionWall(){}
 
-    draw(){}
+    draw(){
+        this.element.style.left = `${this.horizontal}px`
+        this.element.style.left = `${this.vertical}px`
+    }
+
+    initEvents(){
+        document.body.addEventListener('keydown', (event) => {
+            
+            console.log(event.key)
+
+        })
+    }
 }
