@@ -27,7 +27,7 @@ class Player {
 
     draw(){
         this.element.style.left = `${this.horizontal}px`
-        this.element.style.left = `${this.vertical}px`
+        this.element.style.top = `${this.vertical}px`
     }
 
     initEvents(){

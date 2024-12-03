@@ -5,7 +5,7 @@ class Game {
     }
 
     addElement(element) {
-        this.map.insertdjacentElement('beforeend', element)
+        this.map.insertAdjacentElement('beforeend', element)
         this.elements.push(element)
     }
 
