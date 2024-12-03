@@ -1,11 +1,11 @@
 class Player {
 
-    constructor(horizontal, vertical) {
-        this.horizontal = horizontal
-        this.vertical = vertical
+    constructor(x, y) {
+        this.x = x
+        this.y = y
         this.size = 50
         this.keyboardMove - { left: false, right: false, up: false, down: false }
-        this.element = this.createElement
+        this.element = this.createElement();
         this.initEvents()
     }
 
@@ -22,14 +22,14 @@ class Player {
     }
 
     move(){
-        
+
     }
 
     colisionWall(){}
 
     draw(){
-        this.element.style.left = `${this.horizontal}px`;
-        this.element.style.top = `${this.vertical}px`;
+        this.element.style.left = `${this.x}px`;
+        this.element.style.top = `${this.y}px`;
     }
 
     initEvents(){
