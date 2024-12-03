@@ -1,21 +1,18 @@
 class Game {
     constructor(){
         this.map = document.querySelector('.map')
-        this.elements = []
+        this.instances = []
     }
 
-    addElement(element) {
-        this.map.insertAdjacentHTML('beforeend', element)
-        this.elements.push(element)
+    addObject(instance) {
+        this.map.insertAdjacentElement('beforeend', instance.element)
+        this.instances.push(instance)
     }
 
-    update(){
-        const _this = this;
-
-        requestAnimationFrame((ev) => {
-        for(let el of _this.elements) {
-            el.update()
+    update(game){
+        for(let i of game.instances) {
+            i.update()
         }
-    }, this.update)
+        requestAnimationFrame((ev) => game.update(game))
     }
 }

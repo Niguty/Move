@@ -1,9 +1,9 @@
 class Player {
 
-    constructor(x, y) {
+    constructor(x, y, size) {
         this.x = x
         this.y = y
-        this.size = 50
+        this.size = size
         this.step = 1
         this.keyboardMove - { left: false, right: false, up: false, down: false }
         this.element = this.createElement();
@@ -13,6 +13,8 @@ class Player {
     createElement(){
         const player = document.createElement('div')
         player.classList.add('player')
+        player.style.width = `${this.size}px`
+        player.style.height = `${this.size}px`
         return player
     }
 
@@ -37,14 +39,15 @@ class Player {
     }
 
     initEvents(){
+        const p = this;
         document.body.addEventListener('keydown', (event) => {
             
             const key = event.key.toLowerCase()
 
-            if(key == 'a') {}
-            if(key == 'd') {}
-            if(key == 'w') {}
-            if(key == 's') {}
+            if(key == 'a') {p.keyboardMove.left = true}
+            if(key == 'd') {p.keyboardMove.right = true}
+            if(key == 'w') {p.keyboardMove.up = true}
+            if(key == 's') {p.keyboardMove.down = true}
 
         })
     }

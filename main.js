@@ -1,5 +1,6 @@
-const player = new Player(0, 0)
+const player = new Player(0, 0, 50)
 const game = new Game()
 
-game.addElement(player)
-game.update()
+game.addObject(player)
+
+requestAnimationFrame((t) => game.update(game))
