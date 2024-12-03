@@ -50,5 +50,16 @@ class Player {
             if(key == 's') {p.keyboardMove.down = true}
 
         })
+
+        document.body.addEventListener('keyup', (event) => {
+            
+            const key = event.key.toLowerCase()
+
+            if(key == 'a') {p.keyboardMove.left = false}
+            if(key == 'd') {p.keyboardMove.right = false}
+            if(key == 'w') {p.keyboardMove.up = false}
+            if(key == 's') {p.keyboardMove.down = false}
+
+        })
     }
 }
