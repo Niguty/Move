@@ -9,12 +9,13 @@ class Game {
         this.elements.push(element)
     }
 
-    run(){
+    update(){
+        const _this = this;
 
-        for(let el of this.elements) {
+        requestAnimationFrame((ev) => {
+        for(let el of _this.elements) {
             el.update()
         }
-
-        requestAnimationFrame(this.run())
+    }, this.update)
     }
 }
