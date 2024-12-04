@@ -17,10 +17,10 @@ createElement(){
 }
 
 update(){
-    move()
-    colisionWall()
-    checkCollision()
-    draw()
+    this.move()
+    this.colisionWall()
+    this.checkCollision()
+    this.draw()
 }
 
 move(){

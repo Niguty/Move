@@ -6,7 +6,6 @@ class Player {
         this.speed = initial.speed
         this.keyboardMove = { left: false, right: false, up: false, down: false }
         this.element = this.createElement();
-        this.initEvents()
     }
 
     createElement(){
@@ -14,6 +13,7 @@ class Player {
         player.classList.add('player')
         player.style.width = `${this.size}px`
         player.style.height = `${this.size}px`
+        document.body.appendChild(player)
         return player
     }
 
