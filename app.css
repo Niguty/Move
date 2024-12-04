@@ -16,3 +16,11 @@ html, body { margin: 0; height: 100% }
     background-color: blue;
     border-radius: 50%;
 }
+
+.npc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+    border-radius: 50%;
+}

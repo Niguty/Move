@@ -4,6 +4,7 @@ class Npc {
         this.y = initial.y
         this.size = initial.size
         this.step = initial.step
+        this.element = this.createElement
     }
 
 createElement(){
@@ -12,6 +13,12 @@ createElement(){
     npc.style.width = `${this.size}px`
     npc.style.height = `${this.size}px`
     return npc
+}
+
+update(){
+    move()
+    colisionWall()
+    draw()
 }
 
 }
