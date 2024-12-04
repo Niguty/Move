@@ -1,18 +1,16 @@
 class Game {
-    constructor(){
-        this.map = document.querySelector('.map')
-        this.instances = []
+    constructor() {
+        this.objects = [];
     }
 
-    addObject(instance) {
-        this.map.insertAdjacentElement('beforeend', instance.element)
-        this.instances.push(instance)
+    addObject(obj) {
+        this.objects.push(obj);
     }
 
-    update(game){
-        for(let i of game.instances) {
-            i.update()
-        }
-        requestAnimationFrame((ev) => game.update(game))
+    update() {
+        
+        this.objects.forEach((obj) => obj.update());
+
+        requestAnimationFrame(() => this.update());
     }
 }

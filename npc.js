@@ -3,7 +3,7 @@ class Npc {
         this.x = initial.x
         this.y = initial.y
         this.size = initial.size
-        this.step = initial.step
+        this.speed = initial.speed
         this.element = this.createElement();
     }
 
