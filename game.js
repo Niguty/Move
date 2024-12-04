@@ -16,8 +16,3 @@ class Game {
         requestAnimationFrame((ev) => game.update(game))
     }
 }
-
-function gameLoop(npc) {
-    npc.update();
-    requestAnimationFrame(() => gameLoop(npc));
-}

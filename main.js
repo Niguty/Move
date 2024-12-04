@@ -6,10 +6,10 @@ const player = new Player({
 })
 
 const npc = new Npc({
-    x: 0,
-    y: 0,
-    size: 30,
-    step: 5
+    x: 100,
+    y: 100,
+    size: 50,
+    step: 10
 })
 
 const game = new Game()

@@ -19,6 +19,7 @@ createElement(){
 update(){
     move()
     colisionWall()
+    checkCollision()
     draw()
 }
 
@@ -40,6 +41,15 @@ colisionWall(){
 
     if((this.x + this.size)> cW) this.x = cW - this.x
     if((this.y + this.size)> cH) this.y = cH - this.y
+}
+
+checkCollision(player){
+    return (
+        this.x < player.x + player.size &&
+        this.x + this.size > player.x &&
+        this.y < player.y + player.size &&
+        this.y + this.size > player.y
+    );
 }
 
 draw(){
