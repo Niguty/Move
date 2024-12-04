@@ -8,8 +8,13 @@ class Game {
     }
 
     update() {
-        
-        this.objects.forEach((obj) => obj.update());
+        this.objects.forEach((obj) => {
+            try {
+                obj.update();
+            } catch (error) {
+                console.error('Erro ao atualizar objeto:', error);
+            }
+        });
 
         requestAnimationFrame(() => this.update());
     }
