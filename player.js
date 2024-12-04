@@ -1,10 +1,10 @@
 class Player {
 
-    constructor(x, y, size) {
-        this.x = x
-        this.y = y
-        this.size = size
-        this.step = 5
+    constructor(initial) {
+        this.x = initial.x
+        this.y = initial.y
+        this.size = initial.size
+        this.step = initial.step
         this.keyboardMove = { left: false, right: false, up: false, down: false }
         this.element = this.createElement();
         this.initEvents()
