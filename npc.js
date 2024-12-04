@@ -21,4 +21,14 @@ update(){
     draw()
 }
 
+move(){}
+colisionWall(){}
+
+draw(){
+    this.element.style.left = `${this.x}px`
+    this.element.style.top = `${this.y}px`
+}
+
+
+
 }
