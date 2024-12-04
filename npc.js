@@ -23,13 +23,14 @@ update(){
     this.draw()
 }
 
-move(){
+move() {
     this.x += this.step;
 
-    if(this.x <= 0 || this.x >= this.size >= window.innerWidth){
-        this.step =- this.step
+    if (this.x <= 0 || this.x + this.size >= window.innerWidth) {
+        this.step = -this.step;
     }
 }
+
 
 colisionWall(){
 
