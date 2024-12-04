@@ -37,6 +37,15 @@ class Player {
         const cH = window.innerHeight
         
         if(this.x < 0) this.x = 0
+        if(this.y < 0) this.y = 0
+
+        if((
+            this.x + this.size
+        )> cW) this.x = cW - this.size
+
+        if((
+            this.y + this.size
+        )> cH) this.y = cH - this.size
     }
 
     draw(){
