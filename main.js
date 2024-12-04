@@ -8,8 +8,8 @@ const player = new Player({
 const npc = new Npc({
     x: 0,
     y: 0,
-    size: 40,
-    step: 8
+    size: 30,
+    step: 5
 })
 
 const game = new Game()

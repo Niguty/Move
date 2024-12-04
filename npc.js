@@ -22,8 +22,25 @@ update(){
     draw()
 }
 
-move(){}
-colisionWall(){}
+move(){
+    this.x += this.step;
+
+    if(this.x <= 0 || this.x >= this.size >= window.innerWidth){
+        this.step =- this.step
+    }
+}
+
+colisionWall(){
+
+    const cW = window.innerWidth
+    const cH = window.innerHeight
+
+    if(this.x < 0) this.x = 0
+    if(this.y < 0) this.y = 0
+
+    if((this.x + this.size)> cW) this.x = cW - this.x
+    if((this.y + this.size)> cH) this.y = cH - this.y
+}
 
 draw(){
     this.element.style.left = `${this.x}px`
