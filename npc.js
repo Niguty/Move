@@ -29,6 +29,4 @@ draw(){
     this.element.style.top = `${this.y}px`
 }
 
-
-
 }
