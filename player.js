@@ -31,7 +31,13 @@ class Player {
         if(this.keyboardMove.down) this.y += this.step
     }
 
-    colisionWall(){}
+    colisionWall(){
+
+        const cW = window.innerWidth
+        const cH = window.innerHeight
+        
+        if(this.x < 0) this.x = 0
+    }
 
     draw(){
         this.element.style.left = `${this.x}px`;
