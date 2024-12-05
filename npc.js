@@ -14,8 +14,8 @@ class Npc {
 createElement(){
     const npc = document.createElement('div')
     npc.classList.add('npc')
-    npc.style.width = `${this.size1}px`
-    npc.style.height = `${this.size1}px`
+    npc.style.width = `${this.size}px`
+    npc.style.height = `${this.size}px`
     npc.style.position = 'absolute'
     document.body.appendChild(npc)
     return npc
@@ -26,7 +26,7 @@ update(player) {
         this.checkCollision(player);
     }
     this.move();
-    this.colisionWall();
+    this.collisionWall();
     this.draw();
 }
 
@@ -61,7 +61,7 @@ checkCollision(player) {
 }
 
 draw(){
-    this.element.style.left = `${this.x1}px`
-    this.element.style.top = `${this.y1}px`
+    this.element.style.left = `${this.x}px`
+    this.element.style.top = `${this.y}px`
 }
 }
