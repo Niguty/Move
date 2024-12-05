@@ -24,6 +24,7 @@ createElement(){
 update(player) {
     if (player) {
         this.checkCollision(player);
+        this.changeDirection();
     }
     this.move();
     this.draw();
@@ -35,11 +36,18 @@ move(){
 
     if (this.x <= 0 || this.x + this.size >= cW) {
         this.stepX *= -1;
+
         this.stepY = Math.random() > 0.5 ? this.stepY : -this.stepY;
+
+        this.x = this.x <= 0 ? 0 : cW - this.size;
     }
+
     if (this.y <= 0 || this.y + this.size >= cH) {
         this.stepY *= -1;
+
         this.stepX = Math.random() > 0.5 ? this.stepX : -this.stepX;
+
+        this.y = this.y <= 0 ? 0 : cH - this.size
     }
 }
 
@@ -51,15 +59,13 @@ checkCollision(player) {
         this.y + this.size > player.y;
 
     if (colisao) {
-        const profundidadeX =
-            this.x < player.x
-                ? (this.x + this.size) - player.x
-                : (player.x + player.size) - this.x;
+        const profundidadeX = Math.abs(this.x + this.size - player.x) < Math.abs(this.x - (player.x + player.size)) 
+            ? (this.x + this.size) - player.x
+            : (player.x + player.size) - this.x;
 
-        const profundidadeY =
-            this.y < player.y
-                ? (this.y + this.size) - player.y
-                : (player.y + player.size) - this.y;
+        const profundidadeY = Math.abs(this.y + this.size - player.y) < Math.abs(this.y - (player.y + player.size)) 
+            ? (this.y + this.size) - player.y
+            : (player.y + player.size) - this.y;
 
         if (profundidadeX < profundidadeY) {
             if (this.x < player.x) {
@@ -82,6 +88,22 @@ checkCollision(player) {
         console.log("Colisão com ação e reação!");
     }
 }
+
+
+    changeDirection() {
+
+        if((this.x <= 0 || this.x + this.size)>= cW) {
+            this.stepX *= -1
+        }
+        if((this.y <= 0 || this.y + this.size)>= cH) {
+            this.stepY *= -1
+        }
+
+        if(Math.random() < 0.05) {
+            this.stepX += (Math.random() - 1) * 3
+            this.stepY += (Math.random() - 1) * 3
+        }
+    }
 
 
     draw(){
