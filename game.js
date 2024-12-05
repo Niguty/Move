@@ -10,7 +10,7 @@ class Game {
     }
 
     update(game){
-        for(let i of game.instances) {
+        for(let i of game.instances){
             i.update()
         }
         requestAnimationFrame((ev) => game.update(game))

@@ -1,3 +1,6 @@
+const cW = window.innerWidth
+const cH = window.innerHeight
+
 class Npc {
     constructor(initial){
         this.x = initial.x
@@ -18,30 +21,37 @@ createElement(){
 
 update(){
     this.move()
-    this.colisionWall()
+    /*this.colisionWall()*/
     /*this.checkCollision()*/
     this.draw()
 }
 
 move(){
-    this.x += this.speed;
 
-    if(this.x <= 0 || this.x >= this.size >= window.innerWidth){
-        this.speed =- this.speed
-    }
+    const randomX = Math.random() > 0.5 ? 1 : -1;
+    const randomY = Math.random() > 0.5 ? 1 : -1;
+
+    this.x += this.speed * randomX;
+    this.y += this.speed * randomY;
+
+    if(this.x <= 0 || this.x + this.size >= cW) {
+        this.x = Math.max(0, Math.min(this.x, cW - this.size));
+        this.speed =- this.speed;
+    } 
+
+    if(this.y <= 0 || this.y + this.size >= cH) {
+        this.y = Math.max(0, Math.min(this.y, cH - this.size));
+        this.speed =- this.speed;
+    } 
 }
 
-colisionWall(){
-
-    const cW = window.innerWidth
-    const cH = window.innerHeight
-
+/*colisionWall(){
     if(this.x < 0) this.x = 0
     if(this.y < 0) this.y = 0
 
-    if((this.x + this.size)> cW) this.x = cW - this.x
+    if((this.x - this.size)> cW) this.x = cW - this.x
     if((this.y + this.size)> cH) this.y = cH - this.y
-}
+}*/
 
 /*checkCollision(player){
     return (
