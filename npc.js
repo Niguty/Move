@@ -94,8 +94,8 @@ checkCollision(player) {
         }
 
         if(Math.random() < 0.05) {
-            this.stepX += (Math.random() - 10) * 0.1
-            this.stepY += (Math.random() - 10) * 0.1
+            this.stepX += (Math.random() - 10) * 0.3
+            this.stepY += (Math.random() - 10) * 0.3
         }
     }
 
