@@ -36,18 +36,12 @@ move(){
 
     if (this.x <= 0 || this.x + this.size >= cW) {
         this.stepX *= -1;
-
-        this.stepY = Math.random() > 0.5 ? this.stepY : -this.stepY;
-
-        this.x = this.x <= 0 ? 0 : cW - this.size;
+        this.x = this.x <= 0 ? 0 : cW < this.size;
     }
 
     if (this.y <= 0 || this.y + this.size >= cH) {
         this.stepY *= -1;
-
-        this.stepX = Math.random() > 0.5 ? this.stepX : -this.stepX;
-
-        this.y = this.y <= 0 ? 0 : cH - this.size
+        this.y = this.y <= 0 ? 0 : cH < this.size
     }
 }
 
@@ -100,8 +94,8 @@ checkCollision(player) {
         }
 
         if(Math.random() < 0.05) {
-            this.stepX += (Math.random() - 1) * 3
-            this.stepY += (Math.random() - 1) * 3
+            this.stepX += (Math.random() - 10) * 0.1
+            this.stepY += (Math.random() - 10) * 0.1
         }
     }
 

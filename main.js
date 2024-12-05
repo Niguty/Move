@@ -2,7 +2,7 @@ const player = new Player({
     x: 0,
     y: 0,
     size: 50,
-    speed: 10,
+    speed: 5,
 });
 const npc = new Npc({
     x: 100,
