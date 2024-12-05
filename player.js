@@ -24,10 +24,10 @@ class Player {
     }
 
     move(){
-        if(this.keyboardMove.left) this.x -= this.step
-        if(this.keyboardMove.right) this.x += this.step
-        if(this.keyboardMove.up) this.y -= this.step
-        if(this.keyboardMove.down) this.y += this.step
+        if(this.keyboardMove.left) this.x -= this.speed
+        if(this.keyboardMove.right) this.x += this.speed
+        if(this.keyboardMove.up) this.y -= this.speed
+        if(this.keyboardMove.down) this.y += this.speed
     }
 
     colisionWall(){

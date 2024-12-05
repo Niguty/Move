@@ -3,7 +3,7 @@ class Npc {
         this.x = initial.x
         this.y = initial.y
         this.size = initial.size
-        this.step = initial.step
+        this.speed = initial.speed
         this.element = this.createElement();
     }
 
@@ -19,15 +19,15 @@ createElement(){
 update(){
     this.move()
     this.colisionWall()
-    this.checkCollision()
+    /*this.checkCollision()*/
     this.draw()
 }
 
 move(){
-    this.x += this.step;
+    this.x += this.speed;
 
     if(this.x <= 0 || this.x >= this.size >= window.innerWidth){
-        this.step =- this.step
+        this.speed =- this.speed
     }
 }
 
@@ -43,14 +43,14 @@ colisionWall(){
     if((this.y + this.size)> cH) this.y = cH - this.y
 }
 
-checkCollision(player){
+/*checkCollision(player){
     return (
         this.x < player.x + player.size &&
         this.x + this.size > player.x &&
         this.y < player.y + player.size &&
         this.y + this.size > player.y
     );
-}
+}*/
 
 draw(){
     this.element.style.left = `${this.x}px`
