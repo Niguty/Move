@@ -9,12 +9,13 @@ const npc = new Npc({
     x: 100,
     y: 100,
     size: 50,
-    speed: 10
+    stepX: 2,
+    stepY: 2
 })
 
 const game = new Game()
 
-game.addObject(player)
 game.addObject(npc)
+game.addObject(player)
 
 requestAnimationFrame((t) => game.update(game))
