@@ -6,8 +6,8 @@ class Npc {
         this.x = initial.x
         this.y = initial.y
         this.size = initial.size
-        this.speedX = initial.speedX
-        this.speedY = initial.speedY
+        this.stepX = initial.stepX
+        this.stepY = initial.stepY
         this.element = this.createElement();
     }
 
@@ -26,7 +26,6 @@ update(player) {
         this.checkCollision(player);
     }
     this.move();
-    this.collisionWall();
     this.draw();
 }
 
@@ -44,11 +43,6 @@ move(){
     }
 }
 
-collisionWall(){
-    if (this.x <= 0 || this.x + this.size >= cW) this.stepX *= -1;
-    if (this.y <= 0 || this.y + this.size >= cH) this.stepY *= -1;
-}
-
 checkCollision(player) {
     if (
         this.x < player.x + player.size &&
@@ -57,6 +51,8 @@ checkCollision(player) {
         this.y + this.size > player.y
     ) {
         console.log("Colisão com o jogador!");
+    } else {
+        console.log("Sem colisão.");
     }
 }
 

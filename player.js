@@ -32,8 +32,8 @@ class Player {
 
     colisionWall(){
 
-        const cW = window.innerWidth
-        const cH = window.innerHeight
+        const cW = window.innerWidth;
+        const cH = window.innerHeight;
         
         if(this.x < 0) this.x = 0
         if(this.y < 0) this.y = 0

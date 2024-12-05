@@ -18,7 +18,8 @@ class Game {
                 obj.update();
             }
         }
-
+    
         requestAnimationFrame(() => this.update());
     }
+    
 }
