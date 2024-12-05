@@ -15,5 +15,6 @@ const npc = new Npc({
 const game = new Game()
 
 game.addObject(player)
+game.addObject(npc)
 
 requestAnimationFrame((t) => game.update(game))
