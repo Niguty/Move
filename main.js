@@ -8,8 +8,8 @@ const npc = new Npc({
     x: 100,
     y: 100,
     size: 50,
-    stepX: 2,
-    stepY: 2,
+    stepX: 3,
+    stepY: 3,
 });
 const game = new Game();
 

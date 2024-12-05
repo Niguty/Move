@@ -44,20 +44,50 @@ move(){
 }
 
 checkCollision(player) {
-    if (
+    const colisao =
         this.x < player.x + player.size &&
         this.x + this.size > player.x &&
         this.y < player.y + player.size &&
-        this.y + this.size > player.y
-    ) {
-        console.log("Colisão com o jogador!");
-    } else {
-        console.log("Sem colisão.");
+        this.y + this.size > player.y;
+
+    if (colisao) {
+        const profundidadeX =
+            this.x < player.x
+                ? (this.x + this.size) - player.x
+                : (player.x + player.size) - this.x;
+
+        const profundidadeY =
+            this.y < player.y
+                ? (this.y + this.size) - player.y
+                : (player.y + player.size) - this.y;
+
+        if (profundidadeX < profundidadeY) {
+            if (this.x < player.x) {
+                this.x -= profundidadeX / 2;
+                player.x += profundidadeX / 2;
+            } else {
+                this.x += profundidadeX / 2;
+                player.x -= profundidadeX / 2;
+            }
+        } else {
+            if (this.y < player.y) {
+                this.y -= profundidadeY / 2;
+                player.y += profundidadeY / 2;
+            } else {
+                this.y += profundidadeY / 2;
+                player.y -= profundidadeY / 2;
+            }
+        }
+
+        console.log("Colisão com ação e reação!");
     }
 }
 
-draw(){
-    this.element.style.left = `${this.x}px`
-    this.element.style.top = `${this.y}px`
+
+    draw(){
+        this.element.style.left = `${this.x}px`
+        this.element.style.top = `${this.y}px`
+    }
 }
-}
+
+
