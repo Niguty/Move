@@ -11,10 +11,19 @@ const npc = new Npc({
     stepX: 3,
     stepY: 3,
 });
+const npc1 = new Npc1({
+    x: 100,
+    y: 100,
+    size: 50,
+    stepX: 3,
+    stepY: 3
+});
+
 const game = new Game();
 
 game.addObject(player);
 game.addObject(npc);
+game.addObject(npc1);
 
 player.draw();
 npc.draw();
