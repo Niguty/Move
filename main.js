@@ -27,5 +27,6 @@ game.addObject(npc1);
 
 player.draw();
 npc.draw();
+npc1.draw();
 
 requestAnimationFrame(() => game.update());
