@@ -14,12 +14,14 @@ class Game {
             if (obj instanceof Npc) {
                 const player = this.instances.find(o => o instanceof Player);
                 obj.update(player);
+            } if(obj instanceof Npc1) {
+                const player = this.instances.find(o => o instanceof Player);
+                obj.update(player);
             } else {
-                obj.update();
-            }
-        }
+                obj.update()
+             }
     
         requestAnimationFrame(() => this.update());
     }
-    
+}
 }

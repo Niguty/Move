@@ -11,7 +11,7 @@ const npc = new Npc({
     stepX: 3,
     stepY: 3,
 });
-const npc1 = new Npc1({
+const npc1 = new Npc({
     x: 100,
     y: 100,
     size: 50,
