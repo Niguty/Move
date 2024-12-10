@@ -16,7 +16,6 @@ const game = new Game();
 game.addObject(player);
 game.addObject(npc);
 
-
 player.draw();
 npc.draw();
 
