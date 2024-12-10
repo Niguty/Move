@@ -22,6 +22,12 @@ class Npc1 {
     }
 
     update(player){
+        if(player){
+            this.checkCollision(player)
+            this.chanceDirection
+        }
+        this.move()
+        this.draw()
     }
 
     move(){
