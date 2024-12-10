@@ -74,4 +74,19 @@ class Npc1 {
             console.log("Colisão com ação e reação!")
         }
     }
+
+    chanceDirection(){
+
+        if((this.x <= 0 || this.x + this.size)>= cW){
+            this.stepY *= -1
+        }
+        if((this.y <= 0 || this.y + this.size)>= cH){
+            this.stepY *= -1
+        }
+
+        if(Math.random() < 0.05){
+            this.stepX += (Math.random() - 10) * 0.3
+            this.stepY += (Math.random() - 10) * 0.3
+        }
+    }
 }
