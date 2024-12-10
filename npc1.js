@@ -89,4 +89,9 @@ class Npc1 {
             this.stepY += (Math.random() - 10) * 0.3
         }
     }
+
+    draw(){
+        this.element.style.left = `${this.x}px`
+        this.element.style.top = `${this.y}px`
+    }
 }
