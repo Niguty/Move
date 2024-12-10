@@ -38,4 +38,40 @@ class Npc1 {
         }
     }
 
+    checkCollision(player){
+        const colisao = 
+            this.x < player.x + player.size &&
+            this.x + this.size > player.x &&
+            this.y < player.y + player.size &&
+            this.y +this.size > player.y
+        
+        if(colisao){
+            const profundidadeX = Math.abs(this.x + this.size - player.x) < Math.abs(this.x - (player.x + player.size))
+                ? (this.x + this.size) - player.x
+                : (player.x + player.size) - this.x
+
+            const profundidadeY = Math.abs(this.y + this.size - player.y) < Math.abs(this.y - (player.y + player.size))
+                ? (this.y + this.size) - player.y
+                : (player.y + player.size) - this.y
+            
+            if(profundidadeX < profundidadeY){
+                if(this.x < player.x) {
+                    this.x -= profundidadeX /2
+                    player.x += profundidade /2
+                } else {
+                    this.x += profundidadeX /2
+                    player.x -= profundidade /2
+                }
+            } else {
+                if(this.y < player.y){
+                    this.y -= profundidadeY /2
+                    player.y += profundidadeY /2
+                } else {
+                    this.y += profundidadeY /2
+                    player.y -= ptofundidadeY /2
+                }
+            }
+            console.log("Colisão com ação e reação!")
+        }
+    }
 }
