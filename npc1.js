@@ -10,4 +10,15 @@ class Npc1 {
        this.stepY = initial.stepY
        this.element = this.createElement()
     }
+
+    createElement(){
+        const npc1 = document.createElement('div')
+        npc1.classList.add('npc1')
+        npc1.style.width = `${this.size}px`
+        npc1.style.height = `${this.size}px`
+        npc1.style.position = 'absolute'
+        document.body.appendChild(npc1)
+        return npc1
+    }
+    
 }
